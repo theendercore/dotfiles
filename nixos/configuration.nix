@@ -99,7 +99,6 @@
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
   	# add stuff here
-    gtk3
   ];
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
