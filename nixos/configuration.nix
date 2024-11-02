@@ -18,6 +18,8 @@
   networking.hostName = "central-end"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true;
 
