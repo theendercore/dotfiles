@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -92,10 +92,20 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
-      neofetch
-      discord
+      # thunderbird
     ];
+  };
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+  	# add stuff here
+    gtk3
+  ];
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "ender" = import ./ender.nix;
+    };
   };
 
   # Install firefox.

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -30,6 +30,7 @@
     prismlauncher
     onlyoffice-bin
     neofetch
+    inputs.zen-browser.packages."${system}".specific
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
