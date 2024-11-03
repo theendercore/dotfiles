@@ -30,6 +30,8 @@
     prismlauncher
     onlyoffice-bin
     neofetch
+
+    protonup-qt
     inputs.zen-browser.packages."${system}".specific
   ];
 
