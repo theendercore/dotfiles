@@ -44,7 +44,7 @@
     inputs.zen-browser.packages."${system}".specific
 
     # Temop
-    git-cola
+    gitg
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
