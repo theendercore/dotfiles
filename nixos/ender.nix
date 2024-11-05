@@ -39,6 +39,18 @@
   };
   programs.kitty = {
     enable = true;
+    shellIntegration.enableZshIntegration = true;
+    themeFile = "tokyo_night_moon";
+    font = {
+      name = "JetBrains Mono Nerd Font";
+      size = 10;
+    };
+    extraConfig = ''
+      confirm_os_window_close 0
+      background_opacity 0.2
+      background_blur 1
+      window_padding_width 8
+    '';
   };
 
   # You should not change this value, even if you update Home Manager. If you do

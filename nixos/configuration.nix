@@ -87,6 +87,11 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+
+  fonts.packages = with pkgs; [
+    (nerdfonts.override {fonts = ["JetBrainsMono"];})
+  ];
+
   programs.zsh = {
     enable = true;
   };
