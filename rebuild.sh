@@ -43,7 +43,7 @@ sudo nixos-rebuild switch --flake ~/dotfiles/nixos/#default &>nixos-switch.log |
 current=$(nixos-rebuild list-generations | grep current)
 
 # Commit all changes witih the generation metadata
-git commit -am "$current"
+git commit -am "[$current]"
 
 # Back to where you were
 popd
