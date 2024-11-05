@@ -97,10 +97,10 @@
     ];
   };
 
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # add stuff here
-  ];
+  #programs.nix-ld.enable = true;
+  #programs.nix-ld.libraries = with pkgs; [
+  # add stuff here
+  #];
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
