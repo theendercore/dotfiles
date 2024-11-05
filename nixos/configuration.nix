@@ -127,6 +127,7 @@ programs.steam = {
   #  wget
     neovim
     git
+    alejandra
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
