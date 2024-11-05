@@ -25,11 +25,17 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    # apps
     kdePackages.filelight
     discord
     prismlauncher
     onlyoffice-bin
+    spotify-qt
+    aseprite
+
     neofetch
+
+    graalvm-ce
 
     protonup-qt
     inputs.zen-browser.packages."${system}".specific
