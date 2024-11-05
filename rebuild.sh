@@ -18,7 +18,7 @@ set -e
 pushd ~/dotfiles/nixos/
 
 # Edit your config
-nvim configuration.nix
+nvim .
 
 # Early return if no changes were detected (thanks @singiamtel!)
 if git diff --quiet '*.nix'; then
@@ -42,6 +42,7 @@ sudo nixos-rebuild switch --flake ~/dotfiles/nixos/#default &>nixos-switch.log |
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)
 
+curretn=$(echo "$current" | tr -s ' ')
 # Commit all changes witih the generation metadata
 git commit -am "[$current]"
 
