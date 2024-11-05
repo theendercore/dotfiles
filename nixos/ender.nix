@@ -4,8 +4,6 @@
   inputs,
   ...
 }: {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
   home.username = "ender";
   home.homeDirectory = "/home/ender";
 
@@ -18,16 +16,8 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
     # apps
     kdePackages.filelight
     discord
@@ -67,21 +57,25 @@
   # shell provided by Home Manager. If you don't want to manage your shell
   # through Home Manager then you have to manually source 'hm-session-vars.sh'
   # located at either
-  #
   #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
   #
   # or
-  #
   #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
   #
   # or
-  #
   #  /etc/profiles/per-user/ender/etc/profile.d/hm-session-vars.sh
-  #
   home.sessionVariables = {
     EDITOR = "nvim";
   };
-
+  programs.zsh = {
+    enable = true;
+    #enableCompletion = true;
+    #autosuggestion.enable = true;
+    #syntaxHighlighting.enable = true;
+    shellAliases = {
+      update = "echo hello";
+    };
+  };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
