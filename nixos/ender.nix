@@ -75,6 +75,7 @@
   #  /etc/profiles/per-user/ender/etc/profile.d/hm-session-vars.sh
   home.sessionVariables = {
     EDITOR = "nvim";
+    TERMINAL = "kitty";
   };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
