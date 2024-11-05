@@ -34,7 +34,7 @@
     #autosuggestion.enable = true;
     #syntaxHighlighting.enable = true;
     shellAliases = {
-      update = "echo hello";
+      update = "~/dotfiles/rebuild.sh";
     };
   };
 
