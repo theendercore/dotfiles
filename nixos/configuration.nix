@@ -65,6 +65,7 @@
       enable = true;
       compositor = "kwin";
     };
+    theme = "breeze";
   };
   services.desktopManager.plasma6.enable = true;
 
