@@ -1,6 +1,9 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "ender";
@@ -73,7 +76,7 @@
   #  /etc/profiles/per-user/ender/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-     EDITOR = "nvim";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
