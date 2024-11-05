@@ -76,6 +76,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     TERMINAL = "kitty";
+    TERM = "kitty";
   };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
