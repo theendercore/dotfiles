@@ -42,6 +42,9 @@
 
     protonup-qt
     inputs.zen-browser.packages."${system}".specific
+
+    # Temop
+    git-cola
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
