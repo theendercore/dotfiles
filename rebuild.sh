@@ -34,6 +34,9 @@ alejandra . &>/dev/null \
 # Shows your changes
 git diff -U0 '*.nix'
 
+echo "Commit name:"
+read cName
+
 echo "NixOS Rebuilding..."
 
 # Rebuild, output simplified errors, log trackebacks
@@ -44,8 +47,6 @@ gen=$(nixos-rebuild list-generations | grep current)
 
 current=$(echo "$gen" | tr -s ' ' | cut -d' ' -f1-4)
 
-echo "Commit name:"
-read cName
 # Commit all changes witih the generation metadata
 git add *.nix
 git commit -m "$cName [$current]"
