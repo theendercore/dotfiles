@@ -65,7 +65,7 @@
       enable = true;
       compositor = "kwin";
     };
-    theme = "breeze";
+    theme = "catppuccin-mocha";
   };
   services.desktopManager.plasma6.enable = true;
 
@@ -137,6 +137,14 @@
     git
     alejandra
     libnotify
+    (catppuccin-sddm.override
+      {
+        flavor = "mocha";
+        font = "JetBrainsMono";
+        fontSize = "9";
+        #background = "${./wallpaper.png}";
+        #loginBackground = true;
+      })
   ];
 
   # List services that you want to enable:
