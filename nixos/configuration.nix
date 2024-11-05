@@ -129,6 +129,7 @@
     neovim
     git
     alejandra
+    libnotify
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
