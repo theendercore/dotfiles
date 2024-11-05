@@ -40,9 +40,9 @@ echo "NixOS Rebuilding..."
 sudo nixos-rebuild switch --flake ~/dotfiles/nixos/#default &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
 
 # Get current generation metadata
-current=$(nixos-rebuild list-generations | grep current)
+gen=$(nixos-rebuild list-generations | grep current)
 
-curretn=$(echo "$current" | tr -s ' ')
+curretn=$(echo "$gen" | tr -s ' ')
 # Commit all changes witih the generation metadata
 git commit -am "[$current]"
 
