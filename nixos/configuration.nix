@@ -95,8 +95,11 @@
       kdePackages.kate
       # thunderbird
     ];
+    shell = pkgs.zsh;
   };
-
+  programs.zsh = {
+    enable = true;
+  };
   #programs.nix-ld.enable = true;
   #programs.nix-ld.libraries = with pkgs; [
   # add stuff here
