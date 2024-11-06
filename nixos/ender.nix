@@ -9,34 +9,28 @@
 
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
-    # apps
+    # General
+    inputs.zen-browser.packages."${system}".specific
     kdePackages.filelight
-    discord
-    prismlauncher
-    onlyoffice-bin
     spotify-qt
-    aseprite
-
+    discord
     neofetch
 
+    # Work
     graalvm-ce
+    onlyoffice-bin
+    aseprite
 
+    # Gaming
     protonup-qt
-    inputs.zen-browser.packages."${system}".specific
+    prismlauncher
 
+    # Misc
+    zinit
     # Temop
     gitg
   ];
 
-  programs.zsh = {
-    enable = true;
-    #enableCompletion = true;
-    #autosuggestion.enable = true;
-    #syntaxHighlighting.enable = true;
-    shellAliases = {
-      update = "~/dotfiles/rebuild.sh";
-    };
-  };
   programs.kitty = {
     enable = true;
     shellIntegration.enableZshIntegration = true;
@@ -51,6 +45,51 @@
       background_blur 1
       window_padding_width 8
     '';
+  };
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    syntaxHighlighting.enable = true;
+    autosuggestion.enable = true;
+    /*
+         plugins = [
+      {
+        # will source zsh-autosuggestions.plugin.zsh
+        name = "zsh-autosuggestions";
+        src = pkgs.fetchFromGitHub {
+          owner = "zsh-users";
+          repo = "zsh-autosuggestions";
+          rev = "v0.4.0";
+          sha256 = "0z6i9wjjklb4lvr7zjhbphibsyx51psv50gm07mbb0kj9058j6kc";
+        };
+      }
+    ];
+    */
+    history = {
+      size = 10000;
+      save = 10000;
+      share = true;
+      append = true;
+      expireDuplicatesFirst = true;
+      ignoreDups = true;
+      ignoreAllDups = true;
+    };
+
+    shellAliases = {
+      update = "~/dotfiles/rebuild.sh";
+      nv = "nvim";
+      ls = "ls --color";
+    };
+    initExtra = ''
+      zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+    '';
+    # zstyle ':completion:*' list-colors "${s.:. LS_COLORS}"
+  };
+  programs.oh-my-posh = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile "${pkgs.oh-my-posh}/share/oh-my-posh/themes/dracula.omp.json"));
   };
 
   # You should not change this value, even if you update Home Manager. If you do
