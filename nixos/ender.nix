@@ -27,8 +27,10 @@
     protonup-qt
     prismlauncher
 
+    # Essential
+    mpv
+
     # Misc
-    zinit
     # Temop
     gitg
   ];
