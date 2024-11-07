@@ -79,6 +79,7 @@
     shellAliases = {
       update = "~/dotfiles/rebuild.sh";
       nv = "nvim";
+      v = "nvim";
       ls = "ls --color";
     };
     initExtra = ''
@@ -90,6 +91,12 @@
     enable = true;
     enableZshIntegration = true;
     settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile "${pkgs.oh-my-posh}/share/oh-my-posh/themes/dracula.omp.json"));
+  };
+
+  programs.git = {
+    enable = true;
+    userName = "TheEnderCore";
+    userEmail = "theendercore@gmail.com";
   };
 
   # You should not change this value, even if you update Home Manager. If you do
