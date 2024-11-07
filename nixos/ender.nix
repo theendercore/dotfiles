@@ -95,8 +95,15 @@
 
   programs.git = {
     enable = true;
-    userName = "TheEnderCore";
-    userEmail = "theendercore@gmail.com";
+    extraConfig = {
+      init = {
+        defaultBranch = "main";
+      };
+      user = {
+        name = "TheEnderCore";
+        email = "theendercore@gmail.com";
+      };
+    };
   };
 
   # You should not change this value, even if you update Home Manager. If you do
