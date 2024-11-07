@@ -17,6 +17,7 @@
     neofetch
 
     # Work
+    jetbrains.idea-ultimate
     graalvm-ce
     onlyoffice-bin
     aseprite
