@@ -21,6 +21,7 @@
     graalvm-ce
     onlyoffice-bin
     aseprite
+    reaper
 
     # Gaming
     protonup-qt
