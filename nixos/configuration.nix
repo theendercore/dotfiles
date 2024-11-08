@@ -146,6 +146,9 @@
         #loginBackground = true;
       })
   ];
+  environment.variables = {
+    ROC_ENABLE_PRE_VEGA = "1";
+  };
 
   # List services that you want to enable:
   # Enable the OpenSSH daemon.
