@@ -54,7 +54,7 @@
   # You can disable this if you're only using the Wayland session.
   # No you cant cuz the sddm doesnt boot :)
   services.xserver = {
-    #enable = false;
+    enable = true;
     videoDrivers = ["modesetting"];
     #desktopManager = {
     #  xterm.enable = false;
@@ -62,16 +62,15 @@
   };
 
   # Enable the KDE Plasma Desktop Environment.
-  /*
-    services.displayManager.sddm = {
+
+  services.displayManager.sddm = {
     wayland = {
       enable = true;
       compositor = "kwin";
     };
     theme = "catppuccin-mocha";
   };
-  */
-  services.displayManager.ly.enable = true;
+  # services.displayManager.ly.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Enable CUPS to print documents.
