@@ -33,6 +33,7 @@
     # Misc
     # Temop
     gitg
+    gpu-viewer
   ];
 
   programs.kitty = {
