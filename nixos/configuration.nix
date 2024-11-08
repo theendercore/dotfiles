@@ -54,7 +54,7 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver = {
     enable = true;
-    videoDrivers = ["modesetting"];
+    videoDrivers = ["amdgpu"];
     #desktopManager = {
     #  xterm.enable = false;
     #};
