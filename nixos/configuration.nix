@@ -54,7 +54,7 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver = {
     enable = true;
-    videoDrivers = ["amdgpu"];
+    videoDrivers = ["modesetting"];
     #desktopManager = {
     #  xterm.enable = false;
     #};
@@ -155,6 +155,7 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
+  hardware.amdgpu.initrd.enable = true;
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
