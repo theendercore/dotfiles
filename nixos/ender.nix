@@ -31,6 +31,7 @@
     mpv
 
     # Misc
+
     # Temop
     gitg
     gpu-viewer

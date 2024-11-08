@@ -52,8 +52,9 @@
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
+  # No you cant cuz the sddm doesnt boot :)
   services.xserver = {
-    enable = true;
+    #enable = false;
     videoDrivers = ["modesetting"];
     #desktopManager = {
     #  xterm.enable = false;
@@ -61,13 +62,16 @@
   };
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm = {
+  /*
+    services.displayManager.sddm = {
     wayland = {
       enable = true;
       compositor = "kwin";
     };
     theme = "catppuccin-mocha";
   };
+  */
+  services.displayManager.ly.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Enable CUPS to print documents.
@@ -103,7 +107,6 @@
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       kdePackages.kate
-      # thunderbird
     ];
     shell = pkgs.zsh;
   };
@@ -138,14 +141,6 @@
     git
     alejandra
     libnotify
-    (catppuccin-sddm.override
-      {
-        flavor = "mocha";
-        font = "JetBrainsMono";
-        fontSize = "9";
-        #background = "${./wallpaper.png}";
-        #loginBackground = true;
-      })
   ];
   environment.variables = {
     ROC_ENABLE_PRE_VEGA = "1";
