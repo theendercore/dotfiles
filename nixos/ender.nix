@@ -22,6 +22,7 @@
     onlyoffice-bin
     aseprite
     reaper
+    blockbench
 
     # Gaming
     protonup-qt
