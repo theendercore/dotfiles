@@ -112,9 +112,11 @@
   };
 
   programs.nix-ld.enable = true;
-  #programs.nix-ld.libraries = with pkgs; [
-  # add stuff here
-  #];
+  programs.nix-ld.libraries = with pkgs; [
+    glfw3-minecraft
+    openal
+    libGL
+  ];
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
@@ -163,9 +165,6 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
-  environment.sessionVariables = {
-    LD_LIBRARY_PATH = lib.makeLibraryPath [
-      pkgs.glfw
-    ];
-  };
+  # environment.sessionVariables.LD_LIBRARY_PATH =
+  #  [["/run/opengl-driver/lib"] ++ lib.makeLibraryPath [pkgs.glfw3-minecraft]];
 }
